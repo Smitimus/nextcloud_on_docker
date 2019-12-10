@@ -2,8 +2,8 @@
 # defaults file for prep_nextcloud
 
 nextccloud_system_config:
-  - "overwrite.cli.url --value=https://{{ nextcloud_server_fqdn }}"
-  - "trusted_domains 0 --value={{ nextcloud_server_fqdn }}"
+  - "overwrite.cli.url --value=https://nc.{{ nextcloud_server_fqdn }}"
+  - "trusted_domains 0 --value=nc.{{ nextcloud_server_fqdn }}"
   - "trusted_domains 1 --value=nginx"
   - "trusted_proxies 0 --value={{ traefik_facts.ansible_facts.docker_container.NetworkSettings.Networks.backend.IPAddress }}"
   - "redis host --value='redis'"
@@ -72,7 +72,7 @@ nextcloud_app_config:
     state: enable
   - name:  files_pdfviewer
     state: enable
-#  - name:  extract
-#    state: enable
+  - name:  extract
+    state: enable
 #  - name: files_versions_s3
 #    state: enable 
