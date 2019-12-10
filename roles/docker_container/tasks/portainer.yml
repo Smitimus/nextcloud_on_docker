@@ -17,7 +17,7 @@
     networks_cli_compatible: true
     labels:
       traefik.enable: "true"
-      traefik.frontend.rule: "Host:{{ nextcloud_server_fqdn }}; PathPrefixStrip:/portainer"
+      traefik.frontend.rule: "Host:pt.{{ nextcloud_server_fqdn }};"
       traefik.backend: "portainer"
       traefik.port: "9000"
       com.centurylinklabs.watchtower.enable: "true"
