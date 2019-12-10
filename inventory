@@ -29,7 +29,7 @@ nextcloud_db_host           = 'localhost'
 nextcloud_db_name           = 'nextcloud'
 nextcloud_db_user           = 'nextcloud'
 nextcloud_db_passwd         = ''              # If empty the playbook will generate a random password (stored in {{ nextcloud_base_dir }}/secrets ).
-nextcloud_db_prefix         = 'oc_'
+nextcloud_db_prefix         = 'nc_'
 
 ### Optional variables ###
 
@@ -58,14 +58,14 @@ aws_s3_secret         = ''
 # aws_s3_use_path_style = 'true'
 
 # Install restic backup tool if backup_folder is not empty
-restic_repo                 = ''              # e.g. /var/nc-backup
+restic_repo                 = '/var/nc-backup'              # e.g. /var/nc-backup
 # crontab settings restic for restic
 backup_day                  = *
 backup_hour                 = 4
 backup_minute               = 0
 
 # Choose an online office suite to integrate with your Nextcloud. Your options are (without quotation marks): 'none', 'collabora' and 'onlyoffice'.
-online_office               = none
+online_office               = collabora
 # When using Collabora, you're able to install dictionaries alongside with it. Collabora's default is German (de).
 collabora_dictionaries      = 'en'            # Separate ISO 639-1 codes with a space.
 
@@ -76,8 +76,8 @@ talk_install                = false
 adminer_enabled             = false
 
 # Set to true to install Portainer webgui for Docker.
-portainer_enabled           = false
+portainer_enabled           = true
 portainer_passwd            = ''              # If empty the playbook will generate a random password.
 
 # Uncomment 'traefik_api_user' to get access to your Traefik dashboard at https://nextcloud_server_fqdn/traefik .
-# traefik_api_user          = traefik
+traefik_api_user          = admin
