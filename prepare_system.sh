@@ -46,7 +46,7 @@ prepare_raspbian() {
  
 prepare_centos() { 
         $SUDO yum install epel-release -y 
-        $SUDO yum install git vim mc curl facter libselinux-python python python-pip python-passlib python-bcrypt aptitude -y 
+        $SUDO yum install git vim mc curl facter libselinux-python python python-pip python-passlib python-bcrypt aptitude nano -y 
         $SUDO yum update -y 
         $SUDO pip install ansible -U 
  
